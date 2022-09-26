@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="top-site">
         <div>
             <svg class="jss6 jss12" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
                 <path clip-rule="evenodd" shape-rendering="geometricPrecision"
@@ -27,17 +27,38 @@
                 <li><a href="#">Tire suas dúvidas</a></li>
             </ul>
         </nav>
-        <button>Abra sua conta</button>
+        <button class="top-button">Abra sua conta</button>
     </header>
     <section class="full-banner">
         <div class="destak">
-            <h3><span>C6 GLOBAL INVEST</span> Bolsa Americana e fundos globais direto no app.</h3>
+            <h3><span>C6 GLOBAL INVEST</span> Bolsa Americana e fundos globais direto no app</h3>
             <h1>O banco da vida de 20 milhões de pessoas</h1>
             <h2>Conta digital, cartão de crédito, investimento e mais: tudo em um só app.</h2>
             <button>Nossos produtos</button>
         </div>
     </section>
     <footer></footer>
+
+    <script>
+        const BUTTON = document.querySelector(".top-button");
+        const HEADER = document.querySelector(".top-site");
+        HEADER.style.background = 'none';
+        BUTTON.classList.add('disabled');
+
+        window.addEventListener('scroll', (e) => {
+            console.log(window.scrollY);
+
+            if (window.scrollY < 100) {
+                HEADER.style.background = 'none';
+                BUTTON.classList.add('disabled');
+            } else {
+                HEADER.style.background = '#fff';
+                BUTTON.classList.remove('disabled');
+            }
+        });
+
+    </script>
+
 </body>
 
 </html>

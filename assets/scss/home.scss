@@ -4,6 +4,7 @@ body {
     width: 100%;
     // height: calc(100vh - 100px - 100px);
     display: flex;
+    height: 2000px;
 
     &>header {
         position: fixed;
@@ -30,24 +31,39 @@ body {
 
                     >a {
                         text-decoration: none;
-                        color: rgb(34, 34, 34);
+                        color: #222;
                         font-weight: bold;
                     }
                 }
             }
         }
-
-        button {
-            border: none;
-            text-transform: uppercase;
-            border-radius: 20px;
-            width: 290px;
-            height: 40px;
-            color: #333;
-            background: #FFE45C;
-            font-size: .8em;
-        }
     }
+}
+
+button.disabled {
+    background: none;
+    border: solid .5px rgba(36, 36, 36, 0.8);
+}
+
+button.disabled:hover {
+    background: rgba(36, 36, 36, 0.8);
+}
+
+button {
+    width: 290px;
+    height: 40px;
+    border: none;
+    text-transform: uppercase;
+    background: linear-gradient(150deg, #FFE45C 0%, #FFC900 100%);
+    font-size: .8em;
+    color: #333;
+    border-radius: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    background: linear-gradient(150deg, #FFE978 0%, #FBD033 100%);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
 }
 
 .jss6 {
@@ -59,23 +75,73 @@ body {
     height: 24px;
 }
 
-.full-banner{
+.full-banner {
     width: 100%;
     height: 100vh;
     background: url("../images/c6bank-wallpapers/hero-bg-xs.webp") no-repeat;
-    background-size: cover;    
+    background-size: cover;
     background-position: center center;
-    .destak{
+
+    .destak {
         width: 40%;
         height: 60vh;
         position: absolute;
         bottom: 0;
         left: 15%;
-        background-color: red;
-        >h1{
-            font-size: 4em;
+
+        >h1 {
+            font-size: 3em;
             line-height: 1em;
             font-weight: 300;
+            margin-bottom: 5%;
+            margin-top: 2%;
         }
+
+        h2 {
+            width: 80%;
+            font-weight: 300;
+            margin-bottom: 5%;
+        }
+
+        h3 {
+            width: 95%;
+            background: rgba(36, 36, 36, 0.35);
+            color: #FFF;
+            font-weight: normal;
+            font-size: .8em;
+            line-height: 2.5em;
+            border-radius: 25px;
+            padding: 1% 2%;
+            span{
+                //div = elemento de bloco
+                //span = elemento de linha
+
+                // "Agora vc é elemento de bloco"
+                background: #006D8F;
+                border-radius: 25px;
+                width: fit-content;
+                font-weight: 550;
+                display: inline-block;
+                padding: .5% 2%;
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+// breakpoints: números que usamos para definir em que momento o CSS muda.
+
+// smartphone - nenhuma...
+// tablet - 768px
+// desktop - 992px - 1200 ou 1280px
+// desktop grande - 1024px - 1600px - 1920px
+
+// 768 e (992 ou 1280) são os mais usados
+
+@media(min-width: 992px) {
+    .full-banner {
+        background: url("../images/c6bank-wallpapers/hero-bg-desktopWIDE.webp") no-repeat;
+        background-size: cover;
+        position: absolute;
     }
 }
