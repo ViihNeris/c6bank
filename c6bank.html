@@ -27,35 +27,51 @@
                 <li><a href="#">Tire suas dúvidas</a></li>
             </ul>
         </nav>
-        <button class="top-button">Abra sua conta</button>
+        <button class="top-button open-account" title="Abra sua conta">Abra sua conta</button>
     </header>
     <section class="full-banner">
         <div class="destak">
             <h3><span>C6 GLOBAL INVEST</span> Bolsa Americana e fundos globais direto no app</h3>
-            <h1>O banco da vida de 20 milhões de pessoas</h1>
-            <h2>Conta digital, cartão de crédito, investimento e mais: tudo em um só app.</h2>
+            <h1>O banco da vida de<br>20 milhões de pessoas</h1>
+            <h2>Conta digital, cartão de crédito, investimento e mais:<br>tudo em um só app.</h2>
             <button>Nossos produtos</button>
         </div>
     </section>
     <footer></footer>
 
     <script>
-        const BUTTON = document.querySelector(".top-button");
-        const HEADER = document.querySelector(".top-site");
+        const HEADER = document.querySelector('.top-site');
+        const BUTTON = document.querySelector('.top-button');
+        const BODY = document.querySelector('body');
+        const SVG = document.querySelector('.jss6');
         HEADER.style.background = 'none';
+
+        //JS = linguagem dirigida a eventos.
         BUTTON.classList.add('disabled');
 
-        window.addEventListener('scroll', (e) => {
-            console.log(window.scrollY);
-
+        window.addEventListener('scroll', e => {
+            // const ARRAY_A = HEADER.querySelectorAll('a');
+            console.log(BODY.clientHeight);
             if (window.scrollY < 100) {
                 HEADER.style.background = 'none';
                 BUTTON.classList.add('disabled');
             } else {
-                HEADER.style.background = '#fff';
+                // ARRAY_A.forEach(item => item.style.color = '#000');
+                HEADER.style.background = "#FFF";
                 BUTTON.classList.remove('disabled');
+                SVG.style.fill = "#000"
+                HEADER.classList.remove('footer-link-a');
             }
-        });
+
+            if (window.scrollY >= BODY.clientHeight - 1800) {
+                // ARRAY_A.forEach(item => item.style.color = '#FFF');
+                HEADER.style.background = "#000";
+                SVG.style.fill = "#fff";
+                HEADER.classList.add('footer-link-a')
+            }
+        })
+        //função mais simples = Arrow function
+
 
     </script>
 

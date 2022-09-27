@@ -4,19 +4,20 @@ body {
     width: 100%;
     // height: calc(100vh - 100px - 100px);
     display: flex;
-    height: 2000px;
+    height: 3000px;
 
     &>header {
         position: fixed;
         top: 0;
         z-index: 100;
-        height: 100px;
+        height: 83px;
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         background: #FFF;
         transition-duration: .5s;
+        padding: 0 2% 0 6%;
 
         &>nav {
             width: 60%;
@@ -24,10 +25,11 @@ body {
             >ul {
                 margin: 0;
                 display: flex;
+                justify-content: space-between;
 
                 >li {
                     list-style-type: none;
-                    margin-right: 40px;
+                    font-size: .8em;
 
                     >a {
                         text-decoration: none;
@@ -37,20 +39,27 @@ body {
                 }
             }
         }
+
+        &.footer-link-a {
+            >nav>ul>li>a {
+                color: #FFFF;
+            }
+        }
     }
 }
 
 button.disabled {
     background: none;
-    border: solid .5px rgba(36, 36, 36, 0.8);
+    border: solid .5px hsla(0, 0%, 26%, 0.5);
 }
 
 button.disabled:hover {
-    background: rgba(36, 36, 36, 0.8);
+    transition: .2s;
+    background: hsla(0, 0%, 26%, 0.03);
 }
 
 button {
-    width: 290px;
+    width: 53%;
     height: 40px;
     border: none;
     text-transform: uppercase;
@@ -58,13 +67,25 @@ button {
     font-size: .8em;
     color: #333;
     border-radius: 20px;
+    transition: .3s;
 }
 
 button:hover {
     cursor: pointer;
     background: linear-gradient(150deg, #FFE978 0%, #FBD033 100%);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.244);
 }
+.open-account {
+    width: 23%;
+    color: #676665d0;
+    height: 46%;
+    margin-left: 11%;
+}
+
+.open-account:hover{
+    box-shadow: none;
+}
+
 
 .jss6 {
     fill: hsla(0, 0%, 14%, 1);
@@ -72,7 +93,8 @@ button:hover {
 
 .jss12 {
     width: auto;
-    height: 24px;
+    height: 21px;
+    margin-top: 7.5px;
 }
 
 .full-banner {
@@ -83,36 +105,38 @@ button:hover {
     background-position: center center;
 
     .destak {
-        width: 40%;
+        width: 46%;
         height: 60vh;
         position: absolute;
-        bottom: 0;
-        left: 15%;
+        bottom: 7%;
+        left: 6%;
 
         >h1 {
-            font-size: 3em;
-            line-height: 1em;
+            font-size: 3.5em;
+            line-height: 1.2em;
             font-weight: 300;
             margin-bottom: 5%;
             margin-top: 2%;
         }
 
         h2 {
-            width: 80%;
+            width: 100%;
             font-weight: 300;
             margin-bottom: 5%;
+            font-size: 1.3em;
         }
 
         h3 {
-            width: 95%;
+            width: 79%;
             background: rgba(36, 36, 36, 0.35);
             color: #FFF;
             font-weight: normal;
             font-size: .8em;
             line-height: 2.5em;
             border-radius: 25px;
-            padding: 1% 2%;
-            span{
+            padding: .5% 2%;
+
+            span {
                 //div = elemento de bloco
                 //span = elemento de linha
 
@@ -129,6 +153,12 @@ button:hover {
     }
 }
 
+.top-site{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 // breakpoints: números que usamos para definir em que momento o CSS muda.
 
 // smartphone - nenhuma...
@@ -140,8 +170,8 @@ button:hover {
 
 @media(min-width: 992px) {
     .full-banner {
-        background: url("../images/c6bank-wallpapers/hero-bg-desktopWIDE.webp") no-repeat;
+        background: url("../images/c6bank-wallpapers/hero-bg-desktop.webp") no-repeat;
         background-size: cover;
-        position: absolute;
+        background-position-y: center;
     }
 }
