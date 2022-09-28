@@ -1,0 +1,75 @@
+body {
+    background: url("../images/c6bank-wallpapers/background-mobile-login.webp") no-repeat;
+    background-size: 100% 100vh;
+}
+
+.full-banner-form {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fee16161;
+
+    .container-login {
+        width: 420px;
+        height: 40vh;
+        display: flex;
+        align-items: center;
+
+        .form-login {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            > label{
+                font-weight: bold;
+            }
+
+            > button {
+                margin-bottom: 8%;
+            }
+
+            > p > a {
+                color: #FFF;
+                text-shadow: 0 0 5px #000;
+            }
+
+            label {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 5%;
+
+                input {
+                    width: 100%;
+                }
+
+                input:focus{
+                    box-shadow: -2px 4px 5px 0 rgba(34, 34, 34, 0.721);
+                    border: 1px solid #fee161;
+                    padding: 9px;
+                }
+            }
+        }
+    }
+}
+
+// TABLET
+@media(min-width: 768px) {
+    body {
+        background: url("../images/c6bank-wallpapers/background-tablet-login.webp") no-repeat;
+        background-size: 100% 100vh;
+    }
+}
+
+// DESKTOP
+@media(min-width: 1024px) {
+    body {
+        background: url("../images/c6bank-wallpapers/background-desktop-login.webp") no-repeat;
+        background-size: 100% 100vh;
+        background-position-x: center;
+    }
+}

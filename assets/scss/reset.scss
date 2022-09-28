@@ -7,10 +7,25 @@ body {
     color: #333;
 }
 
-h1, h2, h3{
+h1, h2, h3, p{
     margin: 0;
+}
+
+a{
+    color: #222;
+    text-decoration: none;
 }
 
 * {
     box-sizing: border-box;
+}
+
+input{
+    border: none;
+    background: #FFF;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 3%;
+    outline: 0;
 }
